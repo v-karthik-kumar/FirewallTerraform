@@ -12,7 +12,7 @@ resource "aws_route_table" "ResourceRT" {
   vpc_id = var.vpc_id
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.Capstone-gw.id
+    network_interface_id  = var.endpoint_id
   }
   tags = {
     Name = "ResourceRT"
@@ -22,7 +22,7 @@ resource "aws_route_table" "IGWRT" {
   vpc_id = var.vpc_id
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.Capstone-gw.id
+    network_interface_id = var.endpoint_id
   }
   tags = {
     Name = "IGWRT"

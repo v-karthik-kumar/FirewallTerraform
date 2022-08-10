@@ -25,9 +25,11 @@ variable "enable_classiclink" {
 }
 
 variable "vpc_id" {
-  default = "aws_vpc.Firewall-vpc.id"
+  default = "aws_vpc.Firewall-VPC.id"
 }
-
+variable "endpoint_id" {
+  default = "aws_networkfirewall_firewall.CloudthatNetworkFirewall.id"
+}
 variable "availability_zone" {
   default = "us-east-2a"
 }

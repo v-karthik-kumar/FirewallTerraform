@@ -1,4 +1,4 @@
-resource "aws_vpc" "EKS_VPC" {
+resource "aws_vpc" "Firewall-VPC" {
   cidr_block           = var.vpc_cidr
   instance_tenancy     = var.instance_tenancy
   enable_dns_support   = var.enable_dns_support
@@ -6,10 +6,10 @@ resource "aws_vpc" "EKS_VPC" {
   enable_classiclink   = var.enable_classiclink
 
   tags = {
-    Name = "EKS_vpc"
+    Name = "Firewall-VPC"
   }
 }
 
-output "output_vpc"{
-  value = aws_vpc.EKS_VPC.id
+output "vpc_id"{
+  value = aws_vpc.Firewall-VPC.id
 }

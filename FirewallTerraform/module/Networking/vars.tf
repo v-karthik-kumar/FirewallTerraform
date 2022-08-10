@@ -27,4 +27,6 @@ variable "enable_dns_hostnames" {
 variable "enable_classiclink" {
 }
 
+variable "endpoint_id"{
 
+}

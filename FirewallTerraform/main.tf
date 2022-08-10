@@ -1,6 +1,7 @@
 module "Networking" {
   source                  = "./module/Networking"
   vpc_cidr                = var.vpc_cidr
+  vpc_id                  = module.Networking.vpc_id
   instance_tenancy        = var.instance_tenancy
   public_subnets          = var.public_subnets
   enable_dns_support      = var.enable_dns_support
@@ -8,11 +9,12 @@ module "Networking" {
   enable_classiclink      = var.enable_classiclink
   map_public_ip_on_launch = var.map_public_ip_on_launch
   availability_zone       = var.availability_zone
+  endpoint_id             = var.endpoint_id
 }
 
 module "Firewall" {
   source                  = "./module/Firewall"
-  vpc_id                  = var.vpc_id
+  vpc_id                  = module.Networking.vpc_id
   name_rule               = var.name_rule
   type                    = var.type
   generated_rules_type    = var.generated_rules_type

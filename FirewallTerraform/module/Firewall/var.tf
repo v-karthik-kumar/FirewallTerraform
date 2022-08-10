@@ -2,6 +2,7 @@ variable "name_rule" {
 
 }
 
+
 variable "type" {
 
 }

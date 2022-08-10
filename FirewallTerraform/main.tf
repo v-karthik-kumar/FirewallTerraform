@@ -10,9 +10,9 @@ module "Networking" {
   availability_zone       = var.availability_zone
 }
 
-module "Networking" {
+module "Firewall" {
   source                  = "./module/Firewall"
-  vpc_cidr                = var.vpc_cidr
+  vpc_id                  = var.vpc_id
   name_rule               = var.name_rule
   type                    = var.type
   generated_rules_type    = var.generated_rules_type
@@ -46,7 +46,6 @@ module "Capstone-instance" {
   securityGroup_id = module.Capstone-sg.securityGroup_id
   key_name         = var.key_name
 }
-*/
 
 module "Capstone-sg" {
   source       = "../project/module/securityGroup"
@@ -94,3 +93,4 @@ module "Capstone-autoscaling" {
   key_name           = var.key_name
   securityGroup_id   = module.Capstone-sg.securityGroup_id
 }
+*/

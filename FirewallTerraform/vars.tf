@@ -28,6 +28,9 @@ variable "vpc_id" {
   default = "aws_vpc.Firewall-vpc.id"
 }
 
+variable "availability_zone" {
+  default = "us-east-2a"
+}
 #SUBNET
 
 variable "public_subnets" {
